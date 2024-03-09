@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 namespace GameOfLife
 {
     public interface IGrid
@@ -9,7 +7,7 @@ namespace GameOfLife
         List<List<ICell>> grid { get; set; }
         public int getRow(ICell cell);
         public int getColumn(ICell cell);
-        public void InitializeGrid(int rows, int columns);
+        public void InitializeGrid(int rows, int columns, int truePercentage);
         public bool GetCellStatus(int row, int col);
         public void AdvanceGrid();
     }

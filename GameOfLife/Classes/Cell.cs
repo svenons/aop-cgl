@@ -3,9 +3,9 @@ namespace GameOfLife
     public class Cell: ICell
     {
         AutomatonSimulator automatonSimulator = new AutomatonSimulator();
-        public Cell()
+        public Cell(int truePercentage)
         {
-            this.state = automatonSimulator.ChanceCellStatus();
+            this.state = automatonSimulator.ChanceCellStatus(truePercentage);
         }
         public bool state { get; set; }
         public int aliveNeighbours { get; set; }

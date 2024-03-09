@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Runtime.InteropServices;
-
 namespace GameOfLife
 {
     public class AutomatonSimulator {
@@ -15,14 +12,7 @@ namespace GameOfLife
         A neighbor is considered any of the eight cells around the current cell, unless it's an edge case (e.g., for the top row, we will consider that there are no neighbors above it).
 
         */
-        public int truePercentage { get; set; }
-        public AutomatonSimulator() {
-            truePercentage = 25;
-        }
-        public void setTruePercentage(int percentage) {
-            truePercentage = percentage;
-        }
-        public bool ChanceCellStatus() {
+        public bool ChanceCellStatus(int truePercentage) {
             Random random = new Random();
             return random.Next(0, 100) < truePercentage;
         }

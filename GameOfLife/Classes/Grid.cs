@@ -1,5 +1,3 @@
-using System.Data;
-
 namespace GameOfLife
 {
     public class Grid: IGrid
@@ -15,7 +13,7 @@ namespace GameOfLife
         {
             return grid[getRow(cell)].IndexOf(cell);
         }
-        public void InitializeGrid(int rows, int columns)
+        public void InitializeGrid(int rows, int columns, int truePercentage = 25)
         {
             this.rows = rows;
             this.columns = columns;
@@ -24,7 +22,7 @@ namespace GameOfLife
                 List<ICell> row = new List<ICell>();
                 for (int j = 0; j < columns; j++)
                 {
-                    row.Add(new Cell());
+                    row.Add(new Cell(truePercentage));
                 }
                 grid.Add(row);
             }
