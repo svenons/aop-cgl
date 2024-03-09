@@ -4,7 +4,7 @@ namespace GameOfLife
     {
         bool state { get; set; }
         int aliveNeighbours { get; set; }
-        public void CaclulateNeighbours();
+        public void CalculateNeighbours(IGrid grid);
         public void AdvanceCell();
     }
 }
