@@ -19,10 +19,20 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
+        
     - name: Restore dependencies
+      working-directory: GameOfLife
       run: dotnet restore
+      
     - name: Build
+      working-directory: GameOfLife
       run: dotnet build --no-restore
+
+    - name: Restore dependencies (Tests)
+      working-directory: GameOfLife.Tests
+      run: dotnet restore
+    
     - name: Test
+      working-directory: GameOfLife.Tests
       run: dotnet test --no-build --verbosity normal
