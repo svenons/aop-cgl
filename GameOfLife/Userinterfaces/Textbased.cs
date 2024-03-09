@@ -66,6 +66,7 @@ namespace GameOfLife
             
             while(true)
             {
+                Console.Clear();
                 List<List<bool>> status = grid.GetGridStatus();
                 Console.WriteLine("Initial grid status:");
                 for (int i = 0; i < rows; i++)
@@ -107,7 +108,7 @@ namespace GameOfLife
                             Environment.Exit(0);
                             break;
                         default:
-                            Console.WriteLine("Invalid choice. Please try again.");
+                            Console.WriteLine("\nInvalid choice. Please try again.");
                             key = Console.ReadKey();
                             break;
                     }
